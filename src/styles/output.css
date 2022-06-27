@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+::-webkit-scrollbar {
+  display: none;
+}
+.gradientText {
+  background: #cc52e4;
+  background: radial-gradient(
+    circle farthest-corner at top center,
+    #cc52e4 0%,
+    #4daccf 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradientText2 {
+  background: #cc52e4;
+  background: radial-gradient(
+    circle farthest-corner at top center,
+    #cc52e4 100%,
+    #4daccf 0%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.borderGradient {
+  border-color: #cc52e4;
+  border-color: radial-gradient(
+    circle farthest-corner at top center,
+    #cc52e4 0%,
+    #4daccf 100%
+  );
+}
+#canvasForHTML {
+  filter: invert(1);
+}
+span {
+  display: block;
+  overflow: hidden;
+}
+.rotateObject {
+  animation: animateRotate 10s infinite linear;
+}
+@keyframes animateRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

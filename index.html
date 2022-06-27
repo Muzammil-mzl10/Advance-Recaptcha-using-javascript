@@ -1,24 +1,113 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
+    <script src="/src/scripts/minimax.js"></script>
+    <script src="/src/scripts/sketch.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
 
-<head>
-  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <meta charset="utf-8" />
-</head>
-<script src="minimax.js"></script>
-<script src="sketch.js"></script>
-<link rel="stylesheet" href="/output.css">
-
-<body>
-  <div class="m-48 bg-gray-500 grid place-items-center h-screen">
-    <h2 class=" text-3xl font-bold ">Welcome to Advance Recaptcha.</h2>
-    <h3 class="animate-pulse font-bold text-lg font-serif">You need to win or Tie the game with the bote.</h3>
-    <div class=" ">
-      <div id="canvasForHTML"></div>
+    <link rel="stylesheet" href="/src/styles/output.css" />
+    <title>Document</title>
+  </head>
+  <body class="bg-bgColor text-textColor bgGradient">
+    <div
+      class="py-6 font-neutralFace justify-between flex-col w-[100vw] h-screen bg-bgColor flex absolute z-10 px-10 loading-screen"
+    >
+      <div class="flex w-full justify-between">
+        <h1 class="text-9xl animateText uppercase gradientText font-monument">
+          <span>
+            Advance <br />
+            Recaptcha
+          </span>
+        </h1>
+        <h1 class="text-5xl animateText text-right flex flex-col space-y-2">
+          <span> Artificial intelligence </span>
+          <span> term project</span>
+        </h1>
+      </div>
+      <div class="w-full animateText text-3xl items-end justify-between flex">
+        <div>
+          Press Enter to continue<ion-icon
+            class="text-4xl -mb-2 px-2 object-contain"
+            name="enter"
+          ></ion-icon>
+        </div>
+        <div class="text-2xl animateText space-y-5 text-right">
+          <h1>
+            <span class="font-bold"> Taimoor Shahzada </span> <br />
+            <span class="text-3xl">
+              --> Fall-19/BSCS/<span class="gradientText">295</span>
+            </span>
+          </h1>
+          <h1>
+            <span class="font-bold"> Muzammil Ahmed </span> <br />
+            <span class="text-3xl">
+              --> Fall-19/BSCS/<span class="gradientText">276</span></span
+            >
+          </h1>
+        </div>
+      </div>
+      <div class="absolute top-[50%]">
+        <img
+          src="/src/images/flower.svg"
+          class="w-32 invert object-contain rotateObject"
+          alt=""
+        />
+      </div>
     </div>
-    <p id="result" class="font-bold text-lg">Move your mouse around to see circles.</p>
-  </div>
-</body>
-
+    <header class="flex items-center justify-between py-6 px-10 w-full h-fit">
+      <div class="font-monument space-x-8 text-xl uppercase">
+        <a href="/"> Advance Recaptcha </a>
+      </div>
+      <div>
+        <ul class="flex space-x-8 font-neutralFace">
+          <li><a href="about.html"> About </a></li>
+          <li><a href="contact.html"> Contact </a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="relative w-full px-10 flex justify-between homeScreen">
+      <div
+        class="flex flex-col justify-between w-[60%] items-start h-[90vh] pt-[5vh]"
+      >
+        <h2 class="text-3xl font-neutralFace">
+          <span class="">Welcome to </span>
+          <span class="gradientText font-monument text-8xl uppercase">
+            Advance Recaptcha.
+          </span>
+          <span>TIC TAC TOE</span>
+        </h2>
+        <div class="mt-10">
+          <h3 class="text-2xl font-neutralFace">
+            <span> You need to win or Tie the game with the bote. </span>
+          </h3>
+          <p class="text-2xl font-neutralFace">
+            <span>
+              Move your mouse around to see circles.
+              <ion-icon class="rotate-45" name="arrow-up-outline"></ion-icon>
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="w-[40%] flex justify-between h-[90vh] flex-col items-end">
+        <div id="canvasForHTML"></div>
+        <span
+          class="text-4xl mt-20 font-monument gradientText uppercase"
+          id="result"
+        >
+          PLAY
+        </span>
+      </div>
+    </div>
+    <script src="/src/scripts/animate.js"></script>
+  </body>
 </html>

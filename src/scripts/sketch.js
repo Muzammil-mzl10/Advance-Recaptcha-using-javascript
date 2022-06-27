@@ -1,30 +1,29 @@
 // Tic Tac Toe AI with Minimax Algorithm
 
 let board = [
-  ['', '', ''],
-  ['', '', ''],
-  ['', '', '']
+  ["", "", ""],
+  ["", "", ""],
+  ["", "", ""],
 ];
 
 let w; // = width / 3;
 let h; // = height / 3;
 
-let ai = 'X';
-let human = 'O';
+let ai = "X";
+let human = "O";
 let currentPlayer = human;
 
 function setup() {
- 
-  var canvas = createCanvas(400, 400);
-  canvas.parent('canvasForHTML');
-  
+  var canvas = createCanvas(600, 600);
+  canvas.parent("canvasForHTML");
+
   w = width / 3;
   h = height / 3;
   bestMove();
 }
 
 function equals3(a, b, c) {
-  return a == b && b == c && a != '';
+  return a == b && b == c && a != "";
 }
 
 function checkWinner() {
@@ -55,14 +54,14 @@ function checkWinner() {
   let openSpots = 0;
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
-      if (board[i][j] == '') {
+      if (board[i][j] == "") {
         openSpots++;
       }
     }
   }
 
   if (winner == null && openSpots == 0) {
-    return 'tie';
+    return "tie";
   } else {
     return winner;
   }
@@ -74,7 +73,7 @@ function mousePressed() {
     let i = floor(mouseX / w);
     let j = floor(mouseY / h);
     // If valid turn
-    if (board[i][j] == '') {
+    if (board[i][j] == "") {
       board[i][j] = human;
       currentPlayer = ai;
       bestMove();
@@ -83,9 +82,9 @@ function mousePressed() {
 }
 
 function draw() {
-  background(127);
+  background("#EFEFEF");
   strokeWeight(10);
-  
+
   line(w, 0, w, height);
   line(w * 2, 0, w * 2, height);
   line(0, h, width, h);
@@ -112,27 +111,18 @@ function draw() {
   let result = checkWinner();
   if (result != null) {
     noLoop();
-    
-    
-    if (result == 'tie') {
-      a = document.getElementById('result')
-      a.innerText="Match Tie!"
-      a.style.color='green'
 
-
-
-    } else {
-      a = document.getElementById('result')
-      a.innerText="Bote Wins!"
-      a.style.color='red'
-      
+    if (result == "tie") {
+      a = document.getElementById("result");
+      a.innerText = "Match Tie!";
+      a.style.color = "green";
       setTimeout(function () {
-        document.location=''
-         
+        document.location = "";
       }, 3000);
+    } else {
+      a = document.getElementById("result");
+      a.innerText = "Bote Wins!";
+      a.style.color = "red";
     }
   }
 }
-
-
-
